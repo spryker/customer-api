@@ -56,9 +56,6 @@ class CustomerApiFacadeTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testGet(): void
     {
         $customerApiFacade = new CustomerApiFacade();
@@ -76,9 +73,6 @@ class CustomerApiFacadeTest extends Unit
         $this->assertNotEmpty($data[CustomerApiTransfer::CUSTOMER_REFERENCE]);
     }
 
-    /**
-     * @return void
-     */
     public function testGetInvalid(): void
     {
         // Arrange
@@ -96,9 +90,6 @@ class CustomerApiFacadeTest extends Unit
         $this->assertSame(sprintf('Customer not found: %s', $idCustomer), $messages[0]);
     }
 
-    /**
-     * @return void
-     */
     public function testFind(): void
     {
         $customerApiFacade = new CustomerApiFacade();
@@ -115,9 +106,6 @@ class CustomerApiFacadeTest extends Unit
         $this->assertNotEmpty($data[0][CustomerApiTransfer::CUSTOMER_REFERENCE]);
     }
 
-    /**
-     * @return void
-     */
     public function testAdd(): void
     {
         $customerApiFacade = new CustomerApiFacade();
@@ -139,9 +127,6 @@ class CustomerApiFacadeTest extends Unit
         $this->assertNotEmpty($data[CustomerApiTransfer::ID_CUSTOMER]);
     }
 
-    /**
-     * @return void
-     */
     public function testEdit(): void
     {
         $customerApiFacade = new CustomerApiFacade();
@@ -164,9 +149,6 @@ class CustomerApiFacadeTest extends Unit
         $this->assertNotEmpty($data[CustomerApiTransfer::ID_CUSTOMER]);
     }
 
-    /**
-     * @return void
-     */
     public function testDelete(): void
     {
         $customerApiFacade = new CustomerApiFacade();
@@ -178,9 +160,6 @@ class CustomerApiFacadeTest extends Unit
         $this->assertSame((string)$this->idCustomer, $result->getId());
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteInvalid(): void
     {
         $customerApiFacade = new CustomerApiFacade();

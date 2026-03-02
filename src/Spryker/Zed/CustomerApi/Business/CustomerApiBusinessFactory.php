@@ -76,9 +76,6 @@ class CustomerApiBusinessFactory extends AbstractBusinessFactory
         return $this->getProvidedDependency(CustomerApiDependencyProvider::FACADE_CUSTOMER);
     }
 
-    /**
-     * @return \Spryker\Zed\CustomerApi\Dependency\Facade\CustomerApiToApiFacadeInterface
-     */
     protected function getApiFacade(): CustomerApiToApiFacadeInterface
     {
         return $this->getProvidedDependency(CustomerApiDependencyProvider::FACADE_API);

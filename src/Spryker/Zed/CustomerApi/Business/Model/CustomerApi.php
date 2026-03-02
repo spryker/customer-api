@@ -66,14 +66,6 @@ class CustomerApi implements CustomerApiInterface
      */
     protected $apiFacade;
 
-    /**
-     * @param \Spryker\Zed\CustomerApi\Dependency\QueryContainer\CustomerApiToApiQueryBuilderInterface $apiQueryBuilderQueryContainer
-     * @param \Spryker\Zed\CustomerApi\Persistence\CustomerApiQueryContainerInterface $queryContainer
-     * @param \Spryker\Zed\CustomerApi\Business\Mapper\EntityMapperInterface $entityMapper
-     * @param \Spryker\Zed\CustomerApi\Business\Mapper\TransferMapperInterface $transferMapper
-     * @param \Spryker\Zed\CustomerApi\Dependency\Facade\CustomerApiToCustomerInterface $customerFacade
-     * @param \Spryker\Zed\CustomerApi\Dependency\Facade\CustomerApiToApiFacadeInterface $apiFacade
-     */
     public function __construct(
         CustomerApiToApiQueryBuilderInterface $apiQueryBuilderQueryContainer,
         CustomerApiQueryContainerInterface $queryContainer,
@@ -300,12 +292,6 @@ class CustomerApi implements CustomerApiInterface
         return $data;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerResponseTransfer $customerResponseTransfer
-     * @param string|null $idCustomer
-     *
-     * @return \Generated\Shared\Transfer\ApiItemTransfer
-     */
     protected function createApiItemFromCustomerResponseTransfer(
         CustomerResponseTransfer $customerResponseTransfer,
         ?string $idCustomer = null
@@ -333,11 +319,6 @@ class CustomerApi implements CustomerApiInterface
         return $apiItemTransfer;
     }
 
-    /**
-     * @param int $idCustomer
-     *
-     * @return \Generated\Shared\Transfer\ApiItemTransfer
-     */
     protected function createCustomerNotFoundApiItemTransfer(int $idCustomer): ApiItemTransfer
     {
         $apiValidationErrorTransfer = $this->createApiValidationErrorTransfer(
@@ -351,12 +332,6 @@ class CustomerApi implements CustomerApiInterface
             ->addValidationError($apiValidationErrorTransfer);
     }
 
-    /**
-     * @param string $message
-     * @param string|null $field
-     *
-     * @return \Generated\Shared\Transfer\ApiValidationErrorTransfer
-     */
     protected function createApiValidationErrorTransfer(string $message, ?string $field = null): ApiValidationErrorTransfer
     {
         return (new ApiValidationErrorTransfer())

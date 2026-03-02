@@ -33,11 +33,6 @@ class CustomerApiDependencyProvider extends AbstractBundleDependencyProvider
      */
     public const FACADE_API = 'FACADE_API';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -49,11 +44,6 @@ class CustomerApiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addApiQueryBuilderQueryContainer(Container $container): Container
     {
         $container->set(static::QUERY_CONTAINER_API_QUERY_BUILDER, function (Container $container) {
@@ -63,11 +53,6 @@ class CustomerApiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCustomerFacade(Container $container): Container
     {
         $container->set(static::FACADE_CUSTOMER, function (Container $container) {
@@ -77,11 +62,6 @@ class CustomerApiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addApiFacade(Container $container): Container
     {
         $container->set(static::FACADE_API, function (Container $container) {
